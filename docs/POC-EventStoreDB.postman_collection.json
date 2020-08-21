@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "b92c9249-513d-4ff3-9a57-eb0fefc61ec1",
+		"name": "POC-EventStoreDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/card",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"provider\": \"PAYSMART\",\n  \"providerCardId\": \"{{$guid}}\",\n  \"providerAccountId\": \"{{$guid}}\",\n  \"accountId\": \"cta-abc123\",\n  \"accountPlatform\": \"PHI\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/card/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"card",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveCard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"provider\": \"PAYSMART\",\n  \"providerCardId\": \"45950ac2-3157-495b-9570-36bb3d17dfca\",\n  \"providerAccountId\": \"312c99a4-ed2e-456b-89bf-6059d0680264\",\n  \"accountId\": \"cta-abc123\",\n  \"accountPlatform\": \"PHI\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/card/remove",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"card",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
